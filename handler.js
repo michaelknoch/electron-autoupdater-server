@@ -28,8 +28,14 @@ function getRelease(request, reply) {
 
             const newestVersion = semver.clean(releases[0].tag_name);
 
-            if (semver.lt(version, newestVersion)) {
-                console.info('Update available:', newestVersion)
+            if (!version) {
+
+                reply({
+                    'url': releases[0].assets[0].browser_download_url
+                });
+
+            } else if (semver.lt(version, newestVersion)) {
+                console.info('Update available:', newestVersion);
 
                 reply({
                     'url': releases[0].assets[0].browser_download_url
