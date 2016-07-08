@@ -13,7 +13,7 @@ function getRelease(request, reply) {
     const version = request.query.version;
 
     var options = {
-        url: 'https://api.github.com/repositories/54685965/releases',
+        url: 'https://api.github.com/repositories/58486051/releases',
         headers: {
             'User-Agent': 'michaelknoch'
         }
